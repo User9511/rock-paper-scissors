@@ -143,17 +143,15 @@ button img {
   body {
     display: grid;
     height: auto;
-    gap: 2rem;
-    margin: 2rem auto;
+    gap: 1rem;
+    margin: 1rem auto;
   }
-  .title {
-    font-size: 2rem;
-    margin: 0;
+  .title,
+  #vs {
+    font-size: 1.75rem;
+    margin: 0.5rem auto;
   }
 
-  #vs {
-    font-size: 2rem;
-  }
   .btn-container {
     align-items: center;
   }
@@ -165,13 +163,13 @@ button img {
   .cards-container {
     flex-direction: column;
     justify-content: space-between;
-    gap: 1rem;
+    gap: 0.5rem;
     margin: 0.5rem;
   }
 
   .card {
     width: 100%;
-    height: 15rem;
+    height: 12rem;
   }
 
   .play-again-container {
@@ -180,7 +178,7 @@ button img {
 
   #player-choice button,
   #computer-choice button {
-    scale: 1.5;
+    scale: 1.4;
   }
 
   .score-counter h2,
