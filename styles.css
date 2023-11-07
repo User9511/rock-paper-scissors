@@ -67,6 +67,14 @@ button {
   font-weight: bolder;
   width: 5rem;
   border-radius: 1rem;
+  cursor: pointer;
+}
+
+button:hover,
+button:focus-visible {
+  scale: 1.1;
+  transition: 0.2s ease-in-out;
+  outline: 3px solid black;
 }
 
 button img {
@@ -87,11 +95,16 @@ button img {
   scale: 2;
 }
 
+#player-choice button #computer-choice button {
+  user-select: none;
+  pointer-events: none;
+}
+
 .card {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 35rem;
+  width: clamp(20rem, 40vw, 25rem);
   height: 20rem;
   text-align: center;
   position: relative;
@@ -115,23 +128,39 @@ button img {
 }
 
 .play-again-container {
-  background-color: white;
-  border: 0.3rem black solid;
   display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  background-color: white;
+  background-color: gr;
+  border: 0.3rem black solid;
+  border-radius: 1rem;
   align-items: center;
   justify-content: center;
   position: absolute;
-  width: 25rem;
-  height: 15rem;
-  top: 82%;
+  width: 50rem;
+  height: 28rem;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 0;
+  z-index: 100;
 }
 
-.play-again-container a {
-  border: #ffb700 0.25rem solid;
-  padding: 1rem;
+#final-result-header {
+  font-size: 2.8rem;
+}
+
+.final-score-container {
+  display: flex;
+  gap: 2rem;
+  font-size: 1.5rem;
+}
+
+#playAgain {
+  text-align: center;
+  width: 10vw;
+  /* background-color: black; */
+  color: black;
 }
 
 .results-container {
@@ -142,9 +171,11 @@ button img {
 @media screen and (max-width: 768px) {
   body {
     display: grid;
-    gap: 0.5rem;
-    margin: auto;
+    gap: 0.75rem;
+    margin: 0 auto;
+    height: fit-content;
   }
+
   .title,
   #vs {
     font-size: 1.5rem;
@@ -157,22 +188,24 @@ button img {
 
   .btn-wrapper {
     padding: 1rem;
+    margin-top: 1rem;
+  }
+
+  button {
+    padding: 1rem;
+    width: 4.5rem;
   }
 
   .cards-container {
     flex-direction: column;
     justify-content: space-between;
     gap: 0.5rem;
-    margin: 0.5rem;
+    margin: 0;
   }
 
   .card {
     width: 100%;
-    height: 12rem;
-  }
-
-  .play-again-container {
-    bottom: -47%;
+    height: 11rem;
   }
 
   #player-choice button,
@@ -194,11 +227,28 @@ button img {
     align-items: center;
     justify-content: center;
     position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0%;
-    left: 0%;
-    transform: translate(-0%, -0%);
+    width: 90%;
+    height: 90%;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -20%);
     z-index: 0;
+  }
+
+  #playAgain {
+    text-align: center;
+    width: fit-content;
+  }
+
+  .final-score-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    font-size: 1rem;
+  }
+  #final-result-header {
+    text-align: center;
+    font-size: 2rem;
   }
 }
