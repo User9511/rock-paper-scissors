@@ -2,47 +2,53 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="Basic Rock Paper Scissors game from TheOdinProject" />
     <link rel="icon" href="#" />
     <title>Document</title>
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <h2 class="title">Round: <span id="round"> 1</span> / 5</h2>
+    <h2 class="title" aria-label="Round Counter">Round: <span id="round"> 0</span> / 5</h2>
     <div class="cards-container">
       <div class="card player-card">
-        <h2>
+        <h2 aria-label="player choice">
           <span id="player-choice"></span>
         </h2>
         <div class="score-counter">
-          <h2>You:</h2>
+          <h2 aria-label="player score">You:</h2>
           <span id="player-score">0 </span>
         </div>
       </div>
       <span id="vs">VS</span>
       <div class="card computer-card">
-        <h2>
+        <h2 aria-label="computer choice">
           <span id="computer-choice"></span>
         </h2>
         <div class="score-counter">
-          <h2>Computer:</h2>
-          <span id="computer-score"> 0</span>
+          <h2 aria-label="computer score">Computer:</h2>
+          <span id="computer-score">0</span>
         </div>
       </div>
     </div>
 
     <div class="btn-container">
       <div class="btn-wrapper">
-        <button id="rock"><img src="./images/rock.png" alt="rock" /></button>
-        <button id="paper"><img src="./images/paper.png" alt="paper" /></button>
-        <button id="scissors"><img src="./images/scissors.png" alt="scissors" /></button>
+        <button id="rock" class="playerOption"><img src="./images/rock.png" alt="rock" /></button>
+        <button id="paper" class="playerOption"><img src="./images/paper.png" alt="paper" /></button>
+        <button id="scissors" class="playerOption"><img src="./images/scissors.png" alt="scissors" /></button>
       </div>
     </div>
     <div class="results-container">
-      <h2>Result: <span id="result"></span></h2>
-    </div>
-    <div id="end-game" class="play-again-container hide">
-      <a>PLAY AGAIN</a>
+      <h2 aria-label="Round Result">Result: <span id="result"></span></h2>
+      <div id="end-game" class="play-again-container hide">
+        <div id="final-result-header"></div>
+        <div class="final-score-container">
+          <div id="final-player-score"></div>
+          <div id="final-computer-score"></div>
+        </div>
+        <button id="playAgain">PLAY AGAIN</button>
+      </div>
     </div>
 
     <script src="./app.js"></script>
